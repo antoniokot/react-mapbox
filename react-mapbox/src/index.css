@@ -9,3 +9,16 @@ body {
 h1, h2 {
     font-weight: 300;
 }
+
+.marker-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+}
+
+.marker-btn img {
+    width: 20px;
+    height: 20px;
+}

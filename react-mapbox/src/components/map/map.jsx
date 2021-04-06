@@ -1,7 +1,7 @@
 import react, { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 
-import * as cities from '../../cities.json';
+import * as cities from '../data/cities.json';
 
 export default props => {
     const [viewport, setViewport] = useState({
@@ -20,13 +20,15 @@ export default props => {
                 onViewportChange={nextViewPort => setViewport(nextViewPort)}
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
             >
-                {cities.map(city => (
+                {cities.features.map(city => (
                     <Marker
                         key={city.rank}
                         latitude={city.latitude}
                         longitude={city.longitude}
                     >
-                        <img src="" />
+                        <button className="marker-btn">
+                            <img src="./city.svg" alt="city"/>
+                        </button>
                     </Marker>
                     
                     ))
